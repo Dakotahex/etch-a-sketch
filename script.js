@@ -24,14 +24,13 @@ function createGrid(size) {
 }
 
 
-// Adds highlighting functionality
-function addHighlight(target) {
-    target.classList.add('highlighted');
-    
-}
-
+// Random Color
 window.addEventListener('mouseover',function(e) {
-    addHighlight(e.target);
+    if (e.target.classList[0] === 'square') {
+        let randomColor = Math.floor(Math.random()*16777215).toString(16);
+        e.target.style.backgroundColor = '#' + randomColor;
+        console.log(randomColor);
+    }
 });
 
 
